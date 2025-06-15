@@ -1,0 +1,242 @@
+/*Genaral CSS Settings*/
+body {
+    color: white;
+    background-color: #000;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* style for header */
+.header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    color: white;
+    z-index: 10;
+    text-align: center;
+    border: solid 2px transparent;
+}
+
+.sex-heading {
+    position: relative;
+    width: 150px;
+    margin-left: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.sex-heading :hover {
+    position: relative;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 15px;
+    color: #000;
+    font-size: 15px;
+}
+
+.logo h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navigation-pannel {
+    margin-right: 5px;
+    padding-right: 25px;
+}
+
+.navigation-pannel ul {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.navigation-pannel ul li {
+    position: relative;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+.navigation-pannel ul li img {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 35px;
+    background-color: #ffff;
+}
+
+.navigation-pannel ul li img:hover {
+    position: relative;
+    background-color: rgb(198, 159, 137);
+}
+
+/*style for landing section*/
+section {
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+    z-index: 2;
+}
+
+.landing-page-section {
+    position: relative;
+    height: 95vh;
+    top: 33px;
+    text-align: center;
+    background-image: url(asssets/Landing-Page.png);
+    background-size: 104%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style for Navigation section*/
+.navigator-section {
+    position: relative;
+    height: 50vh;
+    background-color: #000;
+}
+
+.navigator-div {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigator-list {
+    position: relative;
+    width: 450px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    border: solid 2px transparent;
+}
+
+.navigator-list h1 {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+}
+
+.navigator-list-line {
+    position: relative;
+    height: 2px;
+    background-color: #fff;
+}
+
+.gap {
+    position: relative;
+    height: 50px;
+}
+
+.class-strugel {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.class-strugel a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+    transition: border 0.3s ease;
+}
+
+.class-strugel a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.class-strugel a:hover::after {
+    width: 100%;
+}
+
+.follow-us {
+    position: relative;
+    width: 450px;
+    margin-right: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    border: solid 2px transparent;
+}
+
+.follow-us h1 {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+}
+
+.follow-us-line {
+    position: relative;
+    height: 2px;
+    background-color: #fff;
+}
+
+.big-line {
+    position: relative;
+    top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.actual-line {
+    position: relative;
+    width: 96%;
+    height: 1px;
+    border-radius: 35px;
+    background-color: #fff;
+}
+
+.coppy-right {
+    position: relative;
+    top: 35px;
+    display: flex;
+    justify-content: start;
+}
+
+.coppy-right p {
+    margin-left: 25px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+    transition: border 0.3s ease;
+}
+
+.coppy-right p::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.coppy-right p:hover::after {
+    width: 100%;
+}
