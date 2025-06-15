@@ -1,0 +1,121 @@
+/* Defyning Animation */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromTop {
+    0% {
+        transform: transllateY(-100vh);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromBottom {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes dropBounce {
+    0% {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+
+    30% {
+        transform: translateY(65px);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+    70% {
+        transform: translateY(25px);
+    }
+
+    90% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Applying Animation to the landing page */
+.header {
+    animation: dropBounce 1.3s ease-in forwards;
+}
+
+.landing-page-heading {
+    animation: slideFromRight 1s ease-out forwards;
+}
+
+.landing-page-sub-heading {
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.get-started-btn {
+    animation: slideFromBottom 1s ease-out forwards;
+}
+
+/*Applying Animation to Pannel page */
+.premium-pannel-content {
+    animation: slideFromRight 1s ease-out forwards;
+}
+
+.more-premium-pannel-content {
+    animation: slideFromRight 1s ease-out forwards;
+}
+
+
+/*Applying Animation to the pannel page */
+.basic-pannel-expand-main-content-feature {
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.Download-now-btn-container-expand {
+    animation: dropBounce 1.3s ease-in forwards;
+}
+
+.basic-pannel-expand-main-content-img {
+    animation: slideFromRight 1s ease-out forwards;
+}
+
+.basic-pannel-expand-content h1 {
+    animation: slideFromRight 1s ease-out forwards;
+}

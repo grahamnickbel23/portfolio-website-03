@@ -1,16 +1,18 @@
-/*Genaral CSS Settings*/
+/*genaral CSS settings*/
 body {
+    background-color: black;
     color: white;
-    background-color: #000;
     scroll-behavior: smooth;
+    /* extra addition */
 }
 
 a {
-    color: #fff;
+    color: #ffff;
     text-decoration: none;
 }
 
 ul {
+    list-style: none;
     list-style: none;
 }
 
@@ -22,7 +24,7 @@ ul {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    background-color: #000;
+    background-color: transparent;
     color: white;
     z-index: 10;
     text-align: center;
@@ -31,7 +33,7 @@ ul {
 
 .sex-heading {
     position: relative;
-    width: 150px;
+    width: 185px;
     margin-left: 15px;
     display: flex;
     justify-content: space-between;
@@ -100,10 +102,71 @@ section {
     height: 95vh;
     top: 33px;
     text-align: center;
-    background-image: url(asssets/Landing-page.png);
+    background-image: url(../asssets/Landing-Page-AI-Image.png);
     background-size: 104%;
     padding: 0;
     margin: 0;
+}
+
+/* style for the landing page text */
+.landing-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* this will center the button and all children horizontally */
+    justify-content: center;
+    max-width: 80%;
+    margin: 0 auto;
+    height: 100vh;
+    /* optional: to center in full viewport */
+}
+
+.landing-page-heading {
+    position: relative;
+    top: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 100px;
+    font-weight: 700;
+    color: rgba(246, 209, 128, 0.808);
+    padding: 0;
+    margin: 0;
+}
+
+.landing-page-sub-heading {
+    position: relative;
+    top: 20px;
+     color: rgba(176, 141, 58, 0.832);
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: 200;
+}
+
+.get-started-btn {
+    position: relative;
+    top: 20px;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(36, 45, 6);
+    color: rgb(169, 169, 65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 650;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.get-started-btn:hover {
+    background-color: wheat;
+    color: black;
+}
+
+.get-started-btn p {
+    position: relative;
+    bottom: 7px;
 }
 
 /* Style for Navigation section*/

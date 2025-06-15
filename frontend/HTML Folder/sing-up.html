@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="style2.css">
-    <title>TERMINAL X</title>
+    <link rel="stylesheet" type="text/css" href="../CSS Folder/style.css">
+    <link rel="stylesheet" type="text/css" href="../CSS Folder/style2.css">
+    <title>TERMINAL X | Sing Up</title>
 </head>
 
 <body>
     <header class="header">
         <!--top header with logo and navigation bar-->
-        <!--sex-->
+        <!--stuff-->
         <div class="sex-heading">
-            <a href="#">MEN</a>
-            <a href="#">WOMEN</a>
+            <a href="#">Notes</a>
+            <a href="softwere.html">Softwares</a>
         </div>
         <!--logo-->
         <div class="logo">
-            <a href="index.html" class="logo-heading">
+            <a href="../../index.html" class="logo-heading">
                 <h1>TERMINAL X</h1>
                 <div></div>
             </a>
@@ -30,12 +30,12 @@
             <ul>
                 <!--search Icon-->
                 <li><a href="#">
-                        <img src="asssets/search-icon.png" alt="Search Icon">
+                        <img src="../asssets/icons/search-icon.png" alt="Search Icon">
                     </a></li>
 
                 <!--login /sign up section-->
-                <li><a href="#">
-                        <img src="asssets/person-account-icon.png" atl="Accouns Icon">
+                <li><a href="log-in.html">
+                        <img src="../asssets/icons/person-account-icon.png" atl="Accouns Icon">
                     </a></li>
             </ul>
         </nav>
@@ -44,34 +44,41 @@
     <section class="log-in">
         <!--main div for log in-->
         <div class="log-in-main-div">
-            <h1>Log In to Your Account</h1>
-            <form action="/submit" method="post">
+            <h1>CHEACK IN</h1>
+            <form id="signup-form" action="/submit" method="post">
+                <!-- Error Message -->
+                <div id="error-message" style="color: red;"></div>
 
                 <!--Email input-->
                 <label for="email">Email</label><br>
-                <input type="email" id="email" placeholder="xyz@hotmain.com" required>
+                <input type="email" id="email" name="email" placeholder="xyz@hotmail.com" required>
                 <br>
 
                 <!--Password Input-->
-                <label for="password">Password</label><br>
-                <input type="password" id="password" placeholder="A1b#2C!4d*E5" required>
+                <label for="password">Enter Password</label><br>
+                <input type="password" id="password" name="password" placeholder="A1b#2C!4d*E5" required>
+                <br>
+
+                <!--Confirm Password Input-->
+                <label for="reenter-password">Confirm Password</label><br>
+                <input type="password" id="reenter-password" name="reenter-password" placeholder="Re-Enter Password"
+                    required>
                 <br>
 
                 <!--Submit Button-->
                 <div class="btn-locator">
-                    <a href="#">
-                        <button type="submit">Log In</button>
-                    </a>
+                    <button type="submit">Sign Up</button>
                 </div>
 
-                <!--Don't Have an Account ?-->
+                <!--Already Have an Account?-->
                 <div class="btn-locator">
-                    <p>Don't have an Account ?</p>
+                    <p>Already have an account?</p>
                 </div>
-                <!--Sign Up Button-->
+
+                <!--Log In Button-->
                 <div class="btn-locator">
-                    <a href="sing-up.html">
-                        <button type="button">Sign Up</button>
+                    <a href="log-in.html">
+                        <button type="button">Log In</button>
                     </a>
                 </div>
             </form>
@@ -96,6 +103,26 @@
                     <li class="class-strugel"><a href="#">Terms & Condition</a></li>
                     <li class="class-strugel"><a href="#">Privacy Policy</a></li>
                     <li class="class-strugel"><a href="#">Cookie Policy</a></li>
+                    <li class="class-strugel"><a href="#">Refund Policy</a></li>
+                    <li class="class-strugel"><a href="#">Return Policy</a></li>
+                </ul>
+            </div>
+            <!--My Terminal-->
+            <div class="navigator-list">
+                <ul>
+                    <!--heading-->
+                    <h1>
+                        My Terminal
+                    </h1>
+                    <!--the line-->
+                    <div class="navigator-list-line"></div>
+                    <!--the GAP-->
+                    <div class="gap"></div>
+                    <!--Main Content-->
+                    <li class="class-strugel"><a href="#">My Order</a></li>
+                    <li class="class-strugel"><a href="#">My List</a></li>
+                    <li class="class-strugel"><a href="../HTML Folder/log-in.html">Log In</a></li>
+                    <li class="class-strugel"><a href="../HTML Folder/sing-up.html">Sing Up</a></li>
                 </ul>
             </div>
             <!--Follow US-->
@@ -112,6 +139,9 @@
                     <!--Main Content-->
                     <li class="class-strugel"><a href="#">INSTAGRAM</a></li>
                     <li class="class-strugel"><a href="#">FACEBOOK</a></li>
+                    <li class="class-strugel"><a href="#">YOU TUBE</a></li>
+                    <li class="class-strugel"><a href="#">TWITTER / X</a></li>
+                    <li class="class-strugel"><a href="#">WHATSAPP</a></li>
                 </ul>
             </div>
         </div>
