@@ -6,11 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorMessage = document.getElementById("error-message");
 
     form.addEventListener("submit", async function (e) {
+        e.preventDefault(); // stop uploading to default submit path
 
         // trhough mismatch of password
         if (pass1.value !== pass2.value) {
             e.preventDefault(); // prevent form submit
-            errorMessage.textContent = "Passwords do not match. Please try again.";
+            alert( "Passwords do not match. Please try again.");
             return
         }
 
@@ -31,10 +32,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (response.ok) {
                 alert("User registered successfully!");
-                // You can redirect or clear the form here
-                window.location.href = "login.html"; // Optional: redirect to login page
+                // redirect to home page
+                window.location.href = "../../index.html";
             } else {
-                errorMessage.textContent = result.message || "Signup failed.";
+                const result = await response.json();
+                if(result.status == 401){
+                    alert(result.message || 'User already Exisit');
+                }else{
+                    alert(result.message || "Signup failed.");
+                }
             }
 
         } catch (err) {
@@ -43,5 +49,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
-// let's connect to backend

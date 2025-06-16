@@ -7,6 +7,18 @@ export default function authRegister(app, authToken, adminAuth) {
     app.post('/auth/signup', async (req, res) => {
         try {
             const data = req.body;
+            const {email} = req.body
+
+            // cheack if user already registered
+            const user = await userAuthModel.findOne({email});
+            
+            if(user){
+                return res.status(401).json({
+                    sucess:false,
+                    message: 'User already Exist'
+                })
+            }
+
             const hashedpassword = await bcrypt.hash(data.password, 10)
             data.password = hashedpassword;
 
