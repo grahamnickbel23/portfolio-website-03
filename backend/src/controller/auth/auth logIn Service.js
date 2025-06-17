@@ -1,9 +1,9 @@
-import userAuthModel from "../model/userAuth Model.js";
+import userAuthModel from "../../model/userAuth Model.js";
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
 export default function authLogIn(app) {
-    app.post('/auth/login', async (req, res) => {
+    app.post('/auth/user/login', async (req, res) => {
         try {
             const jwt_key = process.env.JWT_KEY;
             const { email, password } = req.body;
@@ -41,8 +41,7 @@ export default function authLogIn(app) {
         } catch (err) {
             res.status(500).json({
                 sucess: false,
-                Header: "LogIn Failes",
-                Error: err
+                message: `login failes: ${err}`,
             })
         }
     })

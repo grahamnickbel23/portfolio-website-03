@@ -1,10 +1,10 @@
-import userAuthModel from "../model/userAuth Model.js";
+import userAuthModel from "../../model/userAuth Model.js";
 import bcrypt from 'bcrypt'
 
-export default function authRegister(app, authToken, adminAuth) {
+export default function authRegister(app, doubleAuth, genaralToken, adminToken) {
     
     // routes for new user registration
-    app.post('/auth/signup', async (req, res) => {
+    app.post('/auth/user/signup', doubleAuth, async (req, res) => {
         try {
             const data = req.body;
             const {email} = req.body
@@ -39,17 +39,9 @@ export default function authRegister(app, authToken, adminAuth) {
 
 
     // privilaged routes for deleting exsisting user
-    app.delete('/auth/user/deleate', authToken, adminAuth, async (req, res) => {
+    app.delete('/auth/user/signup', genaralToken, adminToken, async (req, res) => {
         try {
             const { email } = req.body;
-
-            // handel empty error
-            if (!email) {
-                return res.status(500).json({
-                    sucess: false,
-                    message: 'No Email been provided to delete'
-                })
-            }
 
             // delate if user exsist
             const result = await userAuthModel.findOneAndDelete(email)
@@ -72,6 +64,21 @@ export default function authRegister(app, authToken, adminAuth) {
             return res.status(500).json({
                 sucess: false,
                 message: `Requested User Deleted: ${err}`
+            })
+        }
+    })
+
+    // privilaged routes for list of all user
+    app.get('/auth/user', genaralToken, adminToken, async (req, res) => {
+        try{
+
+            const data = await userAuthModel.find().select('-password');
+            return res.status(200).json(data)
+
+        }catch (err){
+            return res.status(500).json({
+                success:false,
+                message:`user get error: ${err}`
             })
         }
     })

@@ -1,9 +1,9 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
-const userAuthSchema = new mongoose.Schema({
+const sellerAuthSchema = new mongoose.Schema({
     email: {
         type: String,
-        requred: true,
+        required: true,
         unique: true,
         lowercase: true
     },
@@ -13,10 +13,15 @@ const userAuthSchema = new mongoose.Schema({
     },
     username: {
         type: String,
-        default: 'Random Earth 2025'
+        default: 'Random Seller 2025'
     },
-    // added an arrey to track all purchased by user
-    products: [
+    type: {
+        type: String,
+        required: true,
+        default: 'seller'
+    },
+    // added to grack sold product
+    sold: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Product'
@@ -28,4 +33,4 @@ const userAuthSchema = new mongoose.Schema({
     }
 })
 
-export default mongoose.model('userAuth', userAuthSchema)
+export default mongoose.model('sellerAuth', sellerAuthSchema)
