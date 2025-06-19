@@ -29,7 +29,11 @@ const productAdminSchema = new mongoose.Schema({
     seller:{
         type:mongoose.Schema.Types.ObjectId,
         ref: 'sellerAuth'
-    }
+    },
+    buyers:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'userAuth'
+    }]
 });
 
 export default mongoose.model('Product', productAdminSchema);

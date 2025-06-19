@@ -6,7 +6,7 @@ export default async function userAuth(req, res, next) {
 
         // return eror if email is missing
         if (!email) {
-            return req.status(400).json({
+            return res.status(400).json({
                 success: false,
                 message: 'no email been provided with token'
             })
@@ -20,7 +20,15 @@ export default async function userAuth(req, res, next) {
                 success: false,
                 message: "access denied as it is not a registered userr"
             })
-        }// push for next middeleware
+        }
+
+        // cheak wheather user is admin
+        if(email == process.env.ADMIN_EMAIL){
+            const adminEmail = true;
+            req.user.admin = adminEmail;
+        }
+        
+        // push for next middeleware
         next();
 
     } catch (err) {

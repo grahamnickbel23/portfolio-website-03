@@ -7,7 +7,16 @@ export default function productView(app, genralToken, userAuth) {
     // product view path
     app.get('/product', genralToken, userAuth, async (req, res) => {
         try {
-            const data = await productModel.find();
+            const data = await productModel.find().select('-buyers');
+            const adminEmail = req.user.admin;
+
+            // handel diffarently if user is admin
+            if (adminEmail) {
+                const allData = await productModel.find();
+
+                // return response
+                return res.status(200).json(allData);
+            }
 
             // return response
             return res.status(200).json(data);
@@ -23,7 +32,7 @@ export default function productView(app, genralToken, userAuth) {
     // Product purchase
     app.post('/product/buy', genralToken, userAuth, async (req, res) => {
         try {
-            const { productId } = req.body;
+            const { productId, promoCode } = req.body;
             const userId = req.user.id;
 
             // Check if product exists
@@ -34,6 +43,21 @@ export default function productView(app, genralToken, userAuth) {
                     success: false,
                     message: `Product ID not found: ${productId}`
                 });
+            }
+
+            // cheack if promo code exist
+            if (!promoCode) {
+                return res.status(400).json({
+                    success: false,
+                    message: `no promocode provided`
+                })
+            }
+
+            if (!(promoCode == process.env.PROMO_CODE)) {
+                return res.status(409).json({
+                    success: false,
+                    message: `wrong promocode provided`
+                })
             }
 
             // Update seller's sold list
@@ -50,6 +74,10 @@ export default function productView(app, genralToken, userAuth) {
                 user.products.push(product._id);
                 await user.save();
             }
+
+            // update product schema
+            product.buyers.push(userId);
+            await product.save();
 
             return res.status(200).json({
                 success: true,
